@@ -1,0 +1,91 @@
+#Calculando a comissao de um produto
+
+valor = int(input("Digite o valor do produto: "))
+limite_valor = int(input("Digite o valor limite do produto para dar a comissão: "))
+porcentagem = int(input("Digite a porcentagem da comissao do produto: "))
+
+if valor > limite_valor:
+  valor = valor + (valor * porcentagem /100)
+  print(valor)
+else:
+  print("Valor do produto menor do que o limite para dar a comissao")
+
+#while valor > limite_valor:
+ # valor = valor + (valor * porcentagem / 100)
+ # print(valor)
+ # break
+
+'''
+#Votos
+idade = 17
+resultado = "Voto Permitido" if idade >= 18 else "Voto não permitido"
+print(resultado)
+'''
+
+
+
+'''
+valor = 200.00
+dia = 0
+custo = 33
+while valor > custo:
+  dia+=1
+  print(f' No dia {dia} o produto vai ser vendido por R$ {float(valor)}')
+  valor-=5
+  '''
+
+
+
+'''
+linhas = 6
+colunas = 6
+simbolo = '|'
+
+for l in range(linhas):
+  for c in range(colunas):
+    print(simbolo, end='')
+  print()
+  '''
+
+'''
+
+palavra = input("Digite uma palavra: ")
+
+for i in palavra:
+  print(i, end=' ')
+  '''
+
+
+'''
+for i in range(1,10):
+  print(f'Versão: {i}\n')
+  for j in range(5):
+    print(f'Produto: {j}\n\n')
+'''
+
+'''
+venda_realizada = True
+mensagem = 'Venda Realizada com sucesso'
+email = 'jamilcampeao@gmail.com'
+
+for enviar in range(3):
+  if venda_realizada:
+    print(mensagem)
+    print(f'Detalhes enviados para o seu email {email}')
+    break
+else:
+  print('Falha na venda')
+  '''
+
+
+'''
+palavra = "Jorge"
+
+for letra in palavra:
+  print(f'{letra} esta dentro da palavra {palavra}')
+
+'''
+'''
+for numero in range(6):
+  print(numero)
+'''
