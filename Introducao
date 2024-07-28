@@ -1,0 +1,85 @@
+
+#operadores condicionais
+'''
+valor = 50
+
+if 20 <= valor < 40:
+  print("Produto aceito")
+else:
+  print("Produto negado")
+'''
+
+
+
+'''
+renda_acima_5mil = True
+nome_limpo = False
+
+if renda_acima_5mil or nome_limpo:
+  print("Financiamento aprovado")
+
+else:
+  print("Financiamento negado")
+'''
+
+
+
+'''
+velocidade = 100
+
+if velocidade > 110:
+    print('Acima da velocidade permitida. Por favor reduza a velocidade')
+
+elif velocidade < 60:
+  print('Favor dirigir acima de 80km/h')
+else:
+  print('Velocidade OK')
+
+'''
+
+#introducao
+'''
+nome = 'Jamil'
+sobrenome = 'Campeão'
+profissao = 'Desenvolvedor'  
+
+texto = f'O {nome} {sobrenome} é um bom [{profissao}]'
+print(texto)
+print(texto.replace('a','e'))
+'''
+
+
+'''
+valor = 99.76
+valor = str(valor)
+print(valor[3:5])
+
+fruta = 'mamao'
+print(fruta[-1])
+'''
+
+
+
+'''
+ano_nascimento = input('Em que ano voce nasceu? ')
+idade = 2077 - int(ano_nascimento)
+print(idade)
+'''
+
+
+
+
+
+
+
+
+'''
+# O Jamil tem 20 anos de idade e mora na cidade de São Paulo.
+nome = input('Qual é o seu nome: ')
+idade = input('Qual é a sua idade: ')
+#idade = str(idade)
+cidade = input('Onde voce mora: ')
+
+print('O ' + nome + ' tem ' + idade + ' anos de idade e mora em ' + cidade + '.')
+'''
+
