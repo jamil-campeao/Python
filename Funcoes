@@ -1,0 +1,87 @@
+
+
+'''
+import math
+
+print(math.factorial(4))
+
+print(math.floor(5))
+print(math.ceil(5.1))
+'''
+
+'''
+#xargs com parametros
+
+def hamburgueria(**cardapio):
+  return cardapio
+
+
+print(hamburgueria(lanche='MC Chicken', bebida='Coca-Cola', sobremesa='Danoninho'))
+print(hamburgueria(lanche='Cheedar', bebida='Suco de Maracuja', sobremesa='Pudim'))
+'''
+
+'''
+#xargs
+def subtracao(*numeros2):
+  resultado = 0
+  for j in numeros2:
+    resultado -= j
+  return resultado
+
+
+z = subtracao(-50,20,10)
+print(z)
+
+def soma(*numeros):
+  resultado = 0
+  for i in numeros:
+    resultado += i
+  return resultado
+
+
+x = soma(2, 6, 10)
+print(x)
+#fim xargs
+'''
+
+
+
+'''
+def calculo(numero1,numero2):
+  soma = numero1 + numero2
+  return soma
+
+resultado = calculo(10,22)
+print(resultado)
+
+'''
+
+
+
+'''
+#default e non default
+def boas_vindas2(quantidade, nome = 'Luucas'):
+  print(f'Ola {nome}')
+  print(f'Temos {quantidade} de lousas em estoque\n')
+
+boas_vindas2(5)
+boas_vindas2(100)
+'''
+
+'''
+def boas_vindas(nome,quantidade):
+  print(f' Ola {nome} tudo bem?')
+  print(f' Temos {quantidade} celulares em estoque\n')
+
+
+boas_vindas('Jamil', 5)
+boas_vindas('Julia', 4)
+boas_vindas('Rodrigo', 1)
+'''
+
+'''
+def boas_vindas():
+  print('Ola Luuuuuuuuuuuuucas')
+
+boas_vindas()
+'''
