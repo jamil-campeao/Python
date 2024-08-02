@@ -1,0 +1,264 @@
+'''
+#generator expressions
+#uma forma mais rapida para listas, dicionarios e etc
+#menos memoria alocada
+from sys import getsizeof
+numeros = (x * 10 for x in range(1000))
+print(list(numeros))
+print(type(numeros))
+print(getsizeof(numeros))
+'''
+
+
+'''
+#list comprehension com numeros
+valores = [ x * 10 for x in range(6)]
+print(valores)
+
+#list comprehension com strings
+frutas1 = ['abacate', 'banana', 'morango', 'kiwi', 'abacaxi']
+
+frutas2 = [iten for iten in frutas1 if 'b' in iten]
+
+print(frutas2)
+'''
+
+
+'''
+#funcao filter
+listateste = [20,45,21,10,5]
+
+print(list(filter(lambda x: x > 20, listateste)))
+
+#outra forma de fazer
+
+def validacao20(x):
+  return x > 20
+
+print(list(filter(validacao20, listateste)))
+'''
+
+
+
+'''
+#map com lambda
+listalambda = [2,5,6,7]
+
+resultado = map(lambda x: x * 2, listalambda)
+print('Resultado lambda:',list(resultado))
+
+#outra forma de se fazer:
+print(list(map(lambda x: x * 2, listalambda)))
+
+#funcao map em uma lista
+
+minhalista = [3,4,5,6]
+
+def multiplica(x):
+  return x * 2
+
+
+lista2 = map(multiplica, minhalista)
+print('Resultado:',list(lista2))
+'''
+
+
+
+'''
+# funcao lambda
+#é uma funcao (pequena) sem nome
+#pode ter varios argumentos mas somente 1 expressao
+#muito utilizada dentro de outras funcoes
+
+soma = lambda x,y: x + y + 20
+print(soma(2,4))
+
+#lambda dentro de outra funcao
+
+def somar(x):
+  funcao2 = lambda x: x + 10
+  return funcao2(x) * 4
+
+print(somar(2))
+'''
+
+
+
+'''
+#visualizando itens, keys e values
+
+aluno = {'nome': 'Ana', 
+         'idade': 16, 
+         'nota_final': 'A',
+         'materias': ['Física', 'Matemática', 'Inglês']
+        }
+print(aluno)
+print(aluno.keys())
+print(aluno.items())
+print(aluno.values())
+print(len(aluno.values()))
+'''
+
+'''
+#looping dentro de um dicionario
+aluno = {'nome': 'Jamil', 'idade': 21, 'nota_final': 10, 'aprovacao': True}
+
+for i, j in aluno.items():
+    print(i, j)
+'''
+
+'''
+#dicionarios
+aluno = {'nome': 'Jamil', 'idade': 21, 'nota_final': 10, 'aprovacao': True}
+aluno.update({'idade': 20})
+aluno.update({'endereco': 'Rua do Comercio'})
+print(aluno.get('endereco'))
+del aluno['aprovacao']
+
+print(aluno)
+'''
+
+
+
+'''
+#sets com strings
+
+set1 = {'a', 'b', 'c'}
+set2 = {'a', 'd', 'e'}
+set3 = {'c', 'd', 'f'}
+
+set4 = set1.difference(set3)
+set5 = set1.union(set2, set3)
+set6 = set1.intersection(set3)
+set7 = set1.symmetric_difference(set2)
+
+print(set4)
+print(set5)
+print(set6)
+print(set7)
+'''
+
+'''
+#funções com sets
+
+var1 = {1,2,3,4,5}
+var1.add(6)
+var1.update([7,8,9,10])
+var1.remove(8)
+var1.discard(90) # a diferença entre discard e removoe é que se o elemento não existir, não gera erro
+
+print(var1)
+'''
+
+
+'''
+#sets
+#evita itens duplicados
+#não utiliza index
+
+lista1 = [10, 20, 30, 40, 50]
+lista2 = [10, 20, 60, 70]
+
+num1 = set(lista1)
+num2 = set(lista2)
+
+print(num1 | num2) #union
+print(num1 - num2) #difference 
+print(num1 ^ num2) #symmetric difference (retira os duplicados)
+print(num1 & num2) #and (mostra os duplicados)
+'''
+
+'''
+#array
+# array é parecido com listas, a diferença é que sua usa array quando há uma grande quantidade de dados, e listas quando há poucos dados.
+
+# Exemplo:
+from array import array
+letras = array('u', ['a', 'b', 'c', 'd'])
+numeros = array('i', [10,20,30,40])
+numeros_f = array('f', [1.2, 3.4, 5.6])
+
+print(letras)
+print(numeros)
+print(numeros_f)
+'''
+
+
+'''
+#tuples
+#basicamente a diferenca entre tuples e listas é que tuples não podem ser alteradas, e também utiliza - se pares de parenteses ao inves de colchetes
+
+status_boleto = ('Pendente', 'Entrada', 'Quitado', 'Cancelado')
+
+print(status_boleto)
+print(type(status_boleto))
+'''
+
+
+
+
+#fazendo lista apartir de um input do usuario
+'''
+frutas = input('Digite o nome das frutas separadas por virgula: ')
+
+frutas_lista = frutas.split(', ')
+
+print(frutas_lista)
+'''
+
+
+
+'''
+#juntando duas listas na mesma ordem
+palavras = ['Camelo', 'Leao', 'Gilbraltar']
+numeros = [10, 20, 110]
+
+duas_listas = zip(palavras, numeros)
+
+print(list(duas_listas))
+'''
+
+'''
+#extraindo listas em variaveis
+item_digitado = input('Digite o item a ser pesquisado na lista: ')
+mecanica = ['Oleo', 'Motor', 'Filtro', 'Pneus']
+
+#verificando itens em uma lista
+if item_digitado.capitalize() in mecanica:
+  print(f'{item_digitado} esta na lista')
+else:
+  print(f'{item_digitado} nao esta na lista')
+
+'''
+
+
+'''
+itens = mecanica
+
+#loops em listas
+for i in mecanica:
+  print(f'Os produtos de uma mecanica contêm: {i}')
+
+
+
+
+supermercado = ['Pao', 'Arroz', 'Feijao', 'Macarrao']
+
+agropecuaria = ['Marreta', 'Sementes']
+
+supermercado.append('Miojo')
+supermercado.insert(0, 'Batata')
+supermercado.remove(supermercado[0])
+supermercado.pop(0)
+supermercado.append('Bolo')
+supermercado.append('Linguinca')
+supermercado.sort()
+
+supermercado.extend(agropecuaria)
+
+lista_dividida = [['Frutas', 'Verduras'], ['Controle', 'Ar Condicionado']]
+
+print(lista_dividida[0][1])
+#print(supermercado)
+
+'''
