@@ -1,0 +1,90 @@
+'''
+#programacao orientada a objetos
+#classes
+#classes sao utilizadas para agrupar dados e funcoes, podendo reutilizar
+#Class: Frutas
+#objects: abacate, banana...
+
+#criar a classe
+class funcionarios0:
+  nome = 'Jamil'
+  sobrenome = 'Campeao'
+
+usuario1 = funcionarios0()
+
+print(usuario1.nome)
+print(usuario1.sobrenome)
+print('===================================================')
+print('')
+
+#criar classe vazia
+class funcionarios:
+  pass
+
+#cria o objeto
+usuario = funcionarios()
+usuario2 = funcionarios()
+
+#criar os parametros
+usuario.nome = 'Jamil'
+usuario.sobrenome = 'Campeao'
+usuario2.nome = 'Lucas'
+usuario2.sobrenome = 'Silva'
+
+print(usuario.nome)
+print(usuario.sobrenome)
+print(usuario2.nome)
+print(usuario2.sobrenome)
+'''
+
+'''
+#criando classes com construtores
+class alunos:
+  #criando o construtor
+  def __init__(self, nome, sobrenome, data_nascimento):
+    self.nome = nome
+    self.sobrenome = sobrenome
+    self.data_nascimento = data_nascimento
+
+#cria o objeto e passa os parametros
+usuario1 = alunos('Jamil', 'Campeao', '22/08/2003')
+usuario2 = alunos('Jorge', 'Luiz', '20/07/2007')
+usuario3 = alunos('Monica', 'Arruda', '20/07/1990')
+
+print(usuario1.nome)
+print(usuario2.nome)
+print(usuario3.nome)
+'''
+
+from datetime import datetime
+#adicionando mais funcoes a classe
+class alunos:
+  #criando o construtor
+  def __init__(self, nome, sobrenome, ano_nascimento):
+    self.nome = nome
+    self.sobrenome = sobrenome
+    self.ano_nascimento = ano_nascimento
+
+  def nome_completo(self):
+    return self.nome + ' ' + self.sobrenome
+
+  def idade_aluno(self):
+    ano_atual = datetime.now().year
+    self.ano_nascimento = int(ano_atual - self.ano_nascimento)
+    return self.ano_nascimento
+
+#cria o objeto e passa os parametros
+usuario1 = alunos('Jamil', 'Campeao', 2003)
+usuario2 = alunos('Jorge', 'Luiz', 2007)
+usuario3 = alunos('Monica', 'Arruda', 1990)
+
+print(usuario1.nome)
+print(usuario2.nome)
+print(usuario3.nome)
+print(usuario1.nome_completo())
+#outra forma de printar
+print(alunos.nome_completo(usuario1))
+print(alunos.idade_aluno(usuario1))
+
+
+
