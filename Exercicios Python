@@ -1,0 +1,419 @@
+'''
+#Desafio 1: Verificar a temperatura da carna para um churrasco
+try:
+  temperatura = int(input('Digite a temperatura da carne em graus Celsius: '))
+  if temperatura < 48:
+    print('Cozinhe mais um pouco')
+  
+  elif temperatura in range(48, 53):
+    print('Selada')
+  
+  elif temperatura in range(54, 59):
+    print('Ao ponto para o mal')
+  
+  elif temperatura in range(60,64):
+    print('Ao ponto')
+  
+  elif temperatura in range(65, 70):
+    print('Ao ponto para o bem')
+  
+  elif temperatura in range(71, 78):
+    print('Bem passada')
+  
+  else:
+    print('Carne provavelmente esta queimada')
+
+except ValueError:
+  print('Digite um número inteiro')
+'''
+
+'''
+#Desafio 2: Criar um programa que calcula a quantidade de tinta necessária para pintar uma parede. Utilizar funções
+try:
+  rendimento = int(input('Digite o rendimento da lata de tinha: '))
+  altura = int(input('Digite a altura da parede: '))
+  largura = int(input('Digite a largura da parede: '))
+
+  def calcula_tintas():
+    calculo = (altura * largura) / rendimento
+    print(f'Você precisa de {calculo} latas de tinta')
+  
+  calcula_tintas()
+except ValueError:
+  print('Digite um número inteiro')
+'''
+'''
+# Desafio 3: Criar um programa que gera 3 listas de acordo com a necessidade logo abaixo
+# Lista 1 = Funcionários que tem carro e trabalham a noite
+# Lista 2 = Funcionários que tem carro e trabalham durante o dia
+# Lista 3 = Funcionários que não tem carro
+funcionarios = ['Jamil', 'Lucas', 'João', 'Maria', 'José', 'Amanda']
+turno_dia = ['Jamil', 'Lucas', 'João']
+turno_noite = ['Maria', 'Jose', 'Amanda']
+tem_carro = ['Jamil', 'João', 'Amanda']
+
+lista1 = set(tem_carro).intersection(turno_noite)
+print(lista1)
+lista2 = set(tem_carro).intersection(turno_dia)
+print(lista2)
+lista3 = set(funcionarios).difference(tem_carro)
+print(lista3)
+'''
+'''
+#Desafio 3: Realizar um programa que faça o calculo de IMC - Indice de Massa Corporal
+try:
+  altura = float(input('Digite a altura em metros: '))
+  peso = float(input('Digite o peso em kg: '))
+  
+  imcaux = peso / altura
+  imc = imcaux / altura
+  imc = round(imc,2)
+  
+  if imc < 18.5:
+    print(f'Seu IMC é: {imc} logo, seu resultado é Magreza')
+  elif (imc >= 18.5) and (imc <= 24.9):
+    print(f'Seu IMC é: {imc} logo, seu resultado é Normal')
+  elif (imc >= 25) and (imc <= 29.9):
+    print (f'Seu IMC é: {imc} logo, seu resultado é Sobrepeso')
+  elif (imc >= 30) and (imc <= 39.9):
+    print(f'Seu IMC é: {imc} logo, seu resultado é Obesidade')
+  else:
+    print(f'Seu IMC é: {imc} logo, seu resultado é Obesidade grave')
+    
+except ValueError:
+  print('Digite um número inteiro ou fracionado')
+'''
+'''
+#Desafio 4:
+
+first_name = str(input('Digite seu primeiro nome: '))
+age = int(input('Digite sua idade: '))
+print(f'Seu nome é {first_name} e sua idade é de {age} anos')
+'''
+
+'''
+#Desafio 5:
+num1 = 10
+num2 = 3.5
+print(round(num1 / num2,2))
+'''
+
+'''
+#Desafio 6:
+num1 = float(input('Digite um numero: '))
+num2 = float(input('Digite outro numero: '))
+print('')
+
+print('Adição:', round(num1 + num2,2))
+print('Subtração:',num1 - num2)
+print('Multiplicação:',num1 * num2)
+print('Divisão:',round(num1 / num2,2))
+print('Exponenciação:',num1 ** num2)]
+'''
+
+'''
+#Desafio 7: Imprimir uma lista
+
+frutas = ['maça', 'banana', 'manga', 'uva']
+print(frutas)
+
+#Desafio 8: Imprimir o primeiro e o último index da lista frutas
+print(frutas[0])
+print(frutas[-1])
+
+#Desafio 9: Adicionar a fruta 'abacaxi' no final da lista frutas e adicionar morango no index 1
+frutas.append('abacaxi')
+frutas[1] = 'morango'
+print(frutas)
+
+#Desafio 10: Remover o item 'manga' da lista e o último item da lista
+frutas.remove('manga')
+frutas.pop(-1)
+#ou pode-se usar del frutas[-1]
+print(f' Lista atualizada: {frutas}')
+print('======================================================')
+
+#Desafio 11: Usar o for loop para imprimir a lista frutas
+for i in frutas:
+  print(f' Eu gosto de: {i}')
+'''
+'''
+#Desafio 12: Contar de 1 a 10 usando for loop
+for i in range(1,11):
+  print(i)
+'''
+'''
+#Desafio 13: Criar um nested loop combinando frutas e vegetais
+frutas = ['morango', 'mamao', 'uva']
+vegetais = ['alface', 'tomate', 'cebola']
+
+for i in frutas:
+  for j in vegetais:
+    print(i,j)
+'''
+'''
+#Desafio 14: Criar um loop para imprimir numeros de 1 a 10 sem utilizar o for loop
+i = 0
+while i <= 10:
+  print(i)
+  i += 1
+'''
+'''
+#Desafio 15: Criar dois loops. O primeiro loop deve imprimir de 1 a 10, quando chegar no 5. Deve-se dar um break O segundo loop deve imprimir de 1 a 10, quando chegar no 5, deve-se pular da contagem o 5 e continuar a contagem
+i = 1
+while i <= 10:
+  if i > 5:
+    break
+  print(i)
+  i += 1
+  
+print('=========================================')
+
+j = 1
+while j <= 10:
+  if j == 5:
+    j += 1
+    continue
+  print(j)
+  j += 1
+'''
+'''
+#Desafio 16: Criar uma lista, adicionar a fruta maça 3x na lista, adicionar mais 3 frutas e imprimir a lista e a quantidade de vezes que aparece maça na lista
+lista = []
+i = 0
+while i < 3:
+  lista.append('maça')
+  i += 1
+
+lista.append('banana')
+lista.append('uva')
+lista.append('abacaxi')
+
+qntd_maca = 0
+for i in lista:
+  if i == 'maça':
+    qntd_maca += 1  
+print(lista)
+print(f'A quantidade de maças na lista é: {qntd_maca}')
+'''
+
+'''
+#Desafio 17: criar um input para receber um numero e imprimir se ele é maior do que 10 ou menor ou igual a 10
+try:
+  num = int(input('Digite um numero: '))
+  
+  if num > 10:
+    print('Numero digitado é maior que 10')
+  else:
+    print('Numero digitado é menor ou igual a 10')
+except ValueError:
+  print('Digite um número inteiro')
+'''
+'''
+#Desafio 18: Criar um input para receber uma idade e verificar se a pessoa é uma criança, adolescente ou adulta
+try:
+  idade = int(input('Digite sua idade: '))
+  if idade in range(1,13):
+    print('Você é uma criança')
+  elif idade in range(13,20):
+    print('Você é um adolescente')
+  elif idade >= 20:
+    print('Você é um adulto')
+  else:
+    print('Idade inválida')
+except ValueError:
+  print('Digite um numero inteiro')
+'''
+'''
+#Desafio 19: Criar um input para receber uma string e verificar se o modelo do carro esta disponível em estoque
+lista = ['BMW X6', 'BMW I5', 'BMW I8']
+
+item_digitado = str(input('Digite o nome do carro que deseja comprar: '))
+
+if item_digitado.upper() in lista:
+  print('Este carro esta disponível')
+else:
+  print('Desculpe, este carro não esta disponível')
+'''
+'''
+#Desafio 20: Crie um loop que peça ao usuário digitar o nome de uma fruta. Se a frutas digitada estiver na lista, imprima 'Você acertou a fruta'. Caso contrário, continue o loop
+fruta = 'abacate'
+while True:
+  fruta_digitada = str(input('Digite uma fruta: '))
+  if fruta_digitada.lower() == fruta:
+    print('Parabéns, você acertou a fruta')
+    break
+  else:
+    print('Fruta incorreta, tente novamente')
+'''
+'''
+#Desafio 21: Crie um loop em uma lista de 1 a 10 e verifica se o número é par ou ímpar
+lista = list(range(1,11))
+
+for i in lista:
+  if i % 2 == 0:
+    print(f'O numero {i} é par')
+  else:
+    print(f'O numero {i} é ímpar')
+'''
+'''
+#Desafio 22: Crie uma tuple com nome de cidades e peça para o usuário adivinhas uma cidade. Se a cidade estiver na tuple, imprima 'Cidade encontrada', caso contrário imprima que a cidade não esta na tuple
+cidades = ('SÃO PAULO', 'BARUERI', 'OSASCO')
+cidades_usuario = str(input('Digite o nome de uma cidade: '))
+
+if cidades_usuario.upper() in cidades:
+  print('A cidade está na lista de cidades')
+else:
+  print('A cidade não está na lista de cidades')
+'''
+'''
+#Desafio 23: Crie um dicionário com nome de paises e suas capitais e peça para o usuário digitar o nome de um país. Se o país estiver no dicionário, imprima a capital. Caso contrário, imprima que não há informação sobre o país
+lista = {'Brasil': 'Brasilia',
+         'Argentina': 'Buenos Aires',
+         'Chile': 'Santiago',
+         'Uruguai': 'Montevideo',
+         'Canada': 'Ottawa'}
+
+pais_usuario = input('Digite o nome de um país: ')
+try:
+  if pais_usuario.capitalize() in lista:
+    print(f'A capital de {pais_usuario} é {lista[pais_usuario]}')
+  
+  else:
+    print('Desculpe, não temos informações sobre essa cidade')
+except KeyError:
+  print('Desculpe, não temos informações sobre essa cidade')
+'''
+'''
+#Desafio 24: Crie dois sets com nomes e verifique quais nomes se repetem entre os dois sets
+set1 = {'João', 'Mario', 'Isabela', 'Pedro', 'Joana'}
+set2 = {'Lucas', 'Mario', 'Maria', 'Pedro', 'Marcos'}
+print(f'Os amigos que se repetem são:{set1.intersection(set2)}')
+'''
+
+'''
+#Desafio 25: crie uma função que retorna o quadrado de um número
+try:
+  numero_usuario = int(input('Digite um numero: '))
+  
+  def caculo(numero):
+    return numero ** 2
+  
+  print(f'O quadrado do numero {numero_usuario} digitado é: {caculo(numero_usuario)}')
+except ValueError:
+  print('Digite um numero inteiro')
+'''
+'''
+#Desafio 26: crie uma função que retorna a soma de dois numeros
+def soma(numero1,numero2):
+  return numero1 + numero2
+try:
+  numero_usuario1 = int(input('Digite um numero: '))
+  numero_usuario2 = int(input('Digite um numero: '))
+  print(f'A soma dos numeros {numero_usuario1} e {numero_usuario2} é: {soma(numero_usuario1,numero_usuario2)}')
+except ValueError:
+  print('Digite um numero inteiro')
+'''
+'''
+#outra forma de fazer:
+def soma(numero1,numero2):
+  result = numero1 + numero2
+  print(f'A soma dos numeros {numero1} e {numero2} é: {result}')
+
+try:
+  numero_usuario1 = int(input('Digite um numero: '))
+  numero_usuario2 = int(input('Digite um numero: '))
+  soma(numero_usuario1,numero_usuario2)
+except ValueError:
+  print('Digite um numero inteiro')
+'''
+'''
+#Desafio 27: crie uma função que recebe um input de numero base e um expoente. Caso não seja digitado nada no expoente, pegar o default 2
+def calculo(base, exp = 2):
+  return base ** exp
+try:
+  base_usuario = int(input('Digite um numero de base: '))
+  exp_usuario = input('Digite um numero de expoente: ')
+  if exp_usuario:
+    print(f'O resultado do cálculo é: {calculo(base_usuario,int(exp_usuario))}')
+  else:
+    print(f'O resultado do cálculo é: {calculo(base_usuario)}')
+except ValueError:
+  print('Digite um numero inteiro')
+'''
+
+'''
+#Desafio 28: Crie uma função que calcula o fatorial de numeros
+from os import abort
+
+
+def calcula_fatorial(numero):
+  if numero in range(0,1):
+    return 1
+  elif numero < 0:
+    print('Digite um numero positivo')
+    abort()
+  else:
+    return numero * calcula_fatorial(numero - 1)
+try:
+  numero_usuario = int(input('Digite um numero para calcular seu fatorial: '))
+  print(f'O Fatorial de {numero_usuario} é: {calcula_fatorial(numero_usuario)}')
+except ValueError:
+  print('Digite um numero inteiro')
+'''
+'''
+#Desafio 29: Crie uma duas funções onde a primeiro faça o calculo do dobro de um numero, a outra função deve calcular o quadrado. A segunda função deve chamar a primeira para realizar o calculo
+def dobro(numero):
+  return numero * 2
+
+def quadrado(numero_quadrado):
+  return (dobro(numero_quadrado) ** 2)
+
+numero_usuario = int(input('Digite um numero para ser calculado: '))
+print(f'O quadrado do dobro do numero {numero_usuario} é: {quadrado(numero_usuario)}')
+'''
+'''
+#Desafio 30: Crie uma função lambda que retorne o cubo de um numero
+numero = int(input("Digite um numero para calcular seu cubo: "))
+
+calculo = lambda x: x ** 3
+print(f'O cubo do número {numero} é: {calculo(numero)}')
+'''
+'''
+# Desafio 31: Crie uma função lambda que retorne a multiplicação de dois numeros
+try:
+  numero1 = int(input('Digite o primeiro numero: '))
+  numero2 = int(input('Digite o segundo numero: '))
+  multiplicacao = lambda x,y: x * y
+  
+  if numero1 > 0 and numero2 > 0:
+    print(f'O resultado da multiplicação dos numeros {numero1} e {numero2} é: {multiplicacao(numero1,numero2)}')
+  else:
+    print('Não são permitidos números negativos')
+except ValueError:
+  print('Digite um número inteiro')
+'''
+'''
+# Desafio 32: Crie uma função lambda que retorne se um numero é par ou impar
+try:
+  numero = int(input('Digite um numero: '))
+  
+  verifica = lambda x: 'Par' if x % 2 == 0 else 'Impar'
+  
+  print(f'O numero {numero} é {verifica(numero)}')
+except ValueError:
+  print('Digite um numero inteiro')
+'''
+'''
+# Desafio 33: Crie uma função lambda que eleve os numeros de uma lista ao quadrado
+lista = [1,2,3,4,5,6,7]
+
+resultado = map(lambda x: x ** 2, lista)
+print(list(resultado))
+
+#outra forma de fazer
+resultado = []
+for i in lista:
+  resultado.append(i ** 2)
+print(resultado)
+'''
